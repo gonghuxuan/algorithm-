@@ -14,6 +14,8 @@
 
 // 输出: [1,2,2,3,5,6]
 
+// https://www.pzijun.cn/algorithms/array/2.html
+
 
 function hebing(num1, num2) {
 
