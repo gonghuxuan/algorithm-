@@ -16,7 +16,21 @@
 
 // https://www.pzijun.cn/algorithms/array/2.html
 
-
-function hebing(num1, num2) {
-
+function merge(num1, m, num2, n) {
+  let len1 = m - 1;
+  let len2 = n - 1;
+  let len = m + n - 1;
+  while (len2 >= 0) {
+    if (len1 <= 0) {
+      num1[len--] = num2[len2--];
+      continue;
+    }
+    num1[len--] = num1[len1] >= num2[len2] ? num1[len1--] : num2[len2--];
+  }
 }
+
+(nums1 = [1, 2, 3, 0, 0, 0]), (m = 3);
+(nums2 = [2, 5, 6]), (n = 3);
+
+merge(nums1, m, nums2, n);
+console.log("🚀 ~ file: 88.js:36 ~ nums1", nums1);
