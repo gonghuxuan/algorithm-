@@ -8,11 +8,15 @@
 
 //  5.添加then（参数，处理参数）
 
+//  6.then内部onFulfilled和onRejected函数，注意必须为函数才处理
+
+//  7.then内部状态为pending时，存储onFulfilled和onRejected函数应该为异步，加上setTimeout
+
 class A {
-    constructor(fun) {
-        this.fun = fun
-    }
+  constructor(fun) {
+    this.fun = fun;
+  }
 }
 
-const a = new A(2)
-console.log(a)
+const a = new A(2);
+console.log(a);
