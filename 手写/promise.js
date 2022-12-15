@@ -15,10 +15,10 @@
 //  8.resolvePromise判断几种条件（promise2和x相等，x为promsie的实力，x是其他类型的promise，x是其他）
 
 class A {
-    constructor(fun) {
-        this.fun = fun
-    }
+  constructor(fun) {
+    this.fun = fun;
+  }
 }
 
-const a = new A(2)
-console.log(a)
+const a = new A(2);
+console.log(a);
