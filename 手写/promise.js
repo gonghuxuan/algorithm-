@@ -14,6 +14,23 @@
 
 //  8.resolvePromise判断几种条件（promise2和x相等，x为promsie的实力，x是其他类型的promise，x是其他）
 
+//  9.1  resolve
+
+//  9.2  reject
+
+//  9.3  finally
+
+//  9.4  catch
+
+//  9.5  all
+
+//  9.6  allsetled
+
+//  9.7  any
+
+//  9.8  rece
+
+
 class A {
   constructor(fun) {
     this.fun = fun;
