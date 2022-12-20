@@ -67,4 +67,17 @@ class myPromise {
       })
     }
   }
+
+  resolvePromise(promise, x, resolve, reject) {
+    if(promise === x) {
+      throw Error('should not same')
+    }
+    if(x instanceof promise) {
+      x.then((result => {
+        this.resolvePromise(promise, result, resolve, reject)
+      }))
+    } else if(x !== null && (typeof x === 'object' || typeof x === 'function' )) {
+      
+    }
+  }
 }
