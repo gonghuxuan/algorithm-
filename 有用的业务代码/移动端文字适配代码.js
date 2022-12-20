@@ -8,3 +8,11 @@ function AutoResponse(width = 750) {
 }
 AutoResponse();
 window.addEventListener("resize", () => AutoResponse());
+
+
+//  或者
+
+
+// html {
+//     font-size: calc(100vw / 7.5);
+// }

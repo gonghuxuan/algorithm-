@@ -1,18 +1,12 @@
-//  1.新建类，参数为函数，函数参数为resolve，reject
+//  construtor
 
-//  2.新建方法resolve，reject
+const { reject } = require("./promise-answer")
 
-//  3.创建状态及保存状态的属性
+//  resolve
 
-//  4.注意this指向
+//  reject
 
-//  5.添加then（参数，处理参数）
-
-//  6.then返回一个新的promise，将状态为pending存入下一个处理的数组中
-
-//  7.对onFulfilled函数和onRjected函数进行try  catch错误处理，错误的话将状态设为reject，正确的话使用resolvePromise设置promise2状态
-
-//  8.resolvePromise判断几种条件（promise2和x相等，x为promsie的实力，x是其他类型的promise，x是其他）
+//  relovePromise
 
 //  9.1  resolve
 
@@ -31,11 +25,46 @@
 //  9.8  rece
 
 
-class A {
-  constructor(fun) {
-    this.fun = fun;
+class myPromise {
+  //  定义状态
+  static FULFILLED = 'fulfilled'
+  static REJECTED = 'rejected'
+  static PENDING = 'pending'
+
+  //  构造函数
+  constructor(func) {
+    //  初始化四个变量
+    this.promiseState = myPromise.PENDING
+    this.promiseResult = null
+    this.onFulfilledCallbacks = []
+    this.onRejectedCallbacks = []
+
+    try{
+      func(resove.bind(this), reject.bind(this))
+    } catch(error) {
+      reject(error)
+    }
+  }
+
+  // resolve
+  resolve(result) {
+    if(this.promiseState === myPromise.PENDING) {
+      this.promiseState = myPromise.FULFILLED
+      this.promiseResult = result
+      this.onFulfilledCallbacks.forEach((callback) => {
+        callback(result)
+      })
+    }
+  }
+
+  //  reject
+  reject(error) {
+    if(this.promiseState === myPromise.PENDING) {
+      this.promiseState = myPromise.REJECTED
+      this.promiseResult = error
+      this.onRejectedCallbacks.forEach(callback => {
+        callback(error)
+      })
+    }
   }
 }
-
-const a = new A(2);
-console.log(a);
