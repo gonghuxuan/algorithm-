@@ -77,7 +77,43 @@ class myPromise {
         this.resolvePromise(promise, result, resolve, reject)
       }))
     } else if(x !== null && (typeof x === 'object' || typeof x === 'function' )) {
-      
+      try{
+        let then = x.then
+     } catch(error) {
+      reject(error)
+     }
+     if(typeof then === 'function') {
+      try{
+      let called = false
+        then.call(this, result => {
+          if(called) return
+          called = true
+          this.resolvePromise(promise, result, resolve, reject)
+        }),
+        error => {
+          if(called) return
+          called = true
+          reject(error)
+        }
+      }catch(error) {
+
+      }
+     } else {
+      resolve(x)
+     }
+    } else {
+      return resolve(x)
     }
+  }
+
+  static resolve(value) {
+    if(value instanceof myPromise) {
+      return value
+    } else {
+      return new myPromise((this.resolve, reject) => {
+        
+      }) 
+    }
+    
   }
 }

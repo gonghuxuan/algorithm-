@@ -1,3 +1,10 @@
+/**
+ * 字体适配
+ * @param {String} width 字体宽度
+ * @author xuan
+ * @return {String} 字体宽度
+ */
+
 function AutoResponse(width = 750) {
     const target = document.documentElement;
     if (target.clientWidth >= 600) {
@@ -16,3 +23,4 @@ window.addEventListener("resize", () => AutoResponse());
 // html {
 //     font-size: calc(100vw / 7.5);
 // }
+
