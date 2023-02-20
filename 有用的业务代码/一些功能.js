@@ -22,7 +22,7 @@
 console.log(money.toString().replace(/(?=\B(?:\d{3})+\b)(\d{3}(?:\.\d+$)?)/g,',$1'));
 
 //  https://github.com/dunizb/JS-Regular-expression-awesome
-
+//  test commit
 //  https://blog.csdn.net/zqd_java/article/details/120737272
 
 // 最新
